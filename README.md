@@ -6,7 +6,7 @@ An LSTM that predicts next-day closing prices for **any stock**, with live
 data from Yahoo Finance, an honest comparison against a naive baseline, and an
 interactive dashboard.
 
-**▶ Live demo:** *(add your Streamlit Community Cloud link here after deploying, see [Deploy](#deploy))*
+**▶ Live demo:** https://purnakash-stock-lstm.streamlit.app (free hosting: if it has been idle, click "wake up" and wait about a minute)**
 
 Rebuilt and upgraded from our B.Tech project *Stock Price Prediction using
 Machine Learning* (SRM Institute of Science and Technology). The original code,

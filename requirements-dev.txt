@@ -1,0 +1,4 @@
+-r requirements.txt
+-e .            # installs this project, so 'python -m ...' commands work
+pytest>=8.0
+ruff>=0.6

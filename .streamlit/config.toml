@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#ea580c"
+base = "light"
+
+[server]
+headless = true

@@ -1,0 +1,15 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Pipeline tests need no TensorFlow or network; the LSTM test is skipped
+      # automatically when Keras is missing, which keeps CI fast.
+      - run: pip install numpy pandas scikit-learn pytest ruff
+      - run: ruff check .
+      - run: pytest

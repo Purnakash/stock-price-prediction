@@ -10,9 +10,6 @@ import sys
 import warnings
 from pathlib import Path
 
-# Hide pandas 3.x deprecation notices raised inside yfinance (harmless).
-warnings.filterwarnings("ignore", message=r".*inplace keyword.*is deprecated.*")
-
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -22,6 +19,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 from spp.data import DataError, load_csv, load_yahoo  # noqa: E402
 from spp.features import prepare  # noqa: E402
 from spp.forecast import evaluate, forecast  # noqa: E402
+
+# Hide pandas 3.x deprecation notices raised inside yfinance (harmless). yfinance is
+# only imported when prices are downloaded, so this still takes effect in time.
+warnings.filterwarnings("ignore", message=r".*inplace keyword.*is deprecated.*")
 
 st.set_page_config(page_title="Stock Price Prediction", page_icon="📈", layout="wide")
 
